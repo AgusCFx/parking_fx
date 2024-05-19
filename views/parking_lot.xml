@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vista Lista -->
+    <record id="parking_lot_view_tree" model="ir.ui.view">
+        <field name="name">parking.lot.view.tree</field>
+        <field name="model">parking.lot</field>
+        <field name="arch" type="xml">
+            <tree string="Estacionamientos existentes">
+                <field name="name" />
+                <field name="address" />
+                <field name="capacity" />
+                <field name="wash_service" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista Formulario -->
+    <record id="parking_lot_view_form" model="ir.ui.view">
+        <field name="name">parking.lot.view.form</field>
+        <field name="model">parking.lot</field>
+        <field name="arch" type="xml">
+            <form string="Agregar nuevo estacionamiento">
+                <sheet>
+                    <group name="general">
+                        <group name="general_info" string="Informacion General">
+                            <field name="name" />
+                            <field name="address" />
+                        </group>
+                        <group name="settings_info" string="Configuración del Estacionamiento">
+                            <field name="capacity" />
+                            <field name="wash_service" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista Search -->
+    <record id="parking_lot_view_search" model="ir.ui.view">
+        <field name="name">parking.lot.view.search</field>
+        <field name="model">parking.lot</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="address" />
+                <field name="capacity" />
+                <field name="wash_service" />
+                <filter name="filter_wash_service" string="Servicio de Lavado Disponible" domain="[('wash_service', '=', 'True')]" />
+                <separator />
+                <filter name="filter_high_capacity" string="Gran capacidad >30" domain="[('capacity', '>', 29)]" />
+            </search>
+        </field>
+    </record>
+
+
+    <record id="action_lot_parking_fx" model="ir.actions.act_window">
+        <field name="name">Parking Fx</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">parking.lot</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_nocontent_smiling_face">
+                Agrega tu primer Estacionamiento aqui :D
+            </p>
+        </field>
+    </record>
+
+
+
+</odoo>

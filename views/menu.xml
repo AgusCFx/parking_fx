@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="root_menu_parking_fx"
+        name="Parking Fx"
+        web_icon="parking_fx,/static/description/icon.png"
+        action="parking_fx.action_lot_parking_fx"
+        sequence="10"/>
+
+    <menuitem
+        id="parking_parking_fx"
+        name="Parking Lot"
+        action="parking_fx.action_lot_parking_fx"
+        parent="root_menu_parking_fx"
+        sequence="10"/>
+
+</odoo>
