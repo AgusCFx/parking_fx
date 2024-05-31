@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vista Lista -->
+    <record id="parking_vehicle_view_tree" model="ir.ui.view">
+        <field name="name">parking.vehicle.view.tree</field>
+        <field name="model">parking.vehicle</field>
+        <field name="arch" type="xml">
+            <tree string="Vehiculos">
+                <field name="license_plate" />
+                <field name="make" />
+                <field name="model" />
+                <field name="parking_lot_id" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista Formulario -->
+    <record id="parking_vehicle_view_form" model="ir.ui.view">
+        <field name="name">parking.vehicle.view.form</field>
+        <field name="model">parking.vehicle</field>
+        <field name="arch" type="xml">
+            <form string="Agregar nuevo Vehiculo">
+                <sheet>
+                    <group name="general">
+                        
+                        <group name="Info" string="Datos de Vehiculo">
+                            <field name="license_plate" />
+                            <field name="make" />
+                            <field name="model" />
+                            <field name="color" />
+                        </group>
+                        <group name="parking" string="Estacionamiento">
+                            <field name="parking_lot_id" />         
+                            <field name="entry_time" />
+                            <field name="exit_time" />
+                        </group>
+                        <group name="notes" string="Informacion adicional">
+                            <field name="notes" />         
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista Search -->
+    <record id="parking_vehicle_view_search" model="ir.ui.view">
+        <field name="name">parking.vehicle.view.search</field>
+        <field name="model">parking.vehicle</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="license_plate" />
+                <field name="entry_time" />
+                <field name="exit_time" />
+            </search>
+        </field>
+    </record>
+
+    <record id="action_vehicles_parking_fx" model="ir.actions.act_window">
+        <field name="name">Vehiculos</field>
+        <field name="res_model">parking.vehicle</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_nocontent_smiling_face">
+                Agrega el primer Vehiculo aqui :D
+            </p>
+        </field>
+    </record>
+</odoo>

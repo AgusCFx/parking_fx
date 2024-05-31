@@ -19,6 +19,7 @@
     'data':[
         'security/ir.model.access.csv',
         'views/parking_lot.xml',
+        'views/parking_vehicle.xml',
         'views/menu.xml',
         ],
     'installable': True,
