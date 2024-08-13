@@ -5,7 +5,7 @@
         <field name="name">parking.lot.view.tree</field>
         <field name="model">parking.lot</field>
         <field name="arch" type="xml">
-            <tree string="Estacionamientos existentes">
+            <tree string="Existing parking lots">
                 <field name="name" />
                 <field name="address" />
                 <field name="capacity" />
@@ -19,14 +19,14 @@
         <field name="name">parking.lot.view.form</field>
         <field name="model">parking.lot</field>
         <field name="arch" type="xml">
-            <form string="Agregar nuevo estacionamiento">
+            <form string="Add New Parking">
                 <sheet>
                     <group name="general">
-                        <group name="general_info" string="Informacion General">
+                        <group name="general_info" string="General information">
                             <field name="name" />
                             <field name="address" />
                         </group>
-                        <group name="settings_info" string="Configuración del Estacionamiento">
+                        <group name="settings_info" string="Parking Setup">
                             <field name="capacity" />
                             <field name="wash_service" />
                         </group>
@@ -46,9 +46,9 @@
                 <field name="address" />
                 <field name="capacity" />
                 <field name="wash_service" />
-                <filter name="filter_wash_service" string="Servicio de Lavado Disponible" domain="[('wash_service', '=', 'True')]" />
+                <filter name="filter_wash_service" string="Wash Service Available" domain="[('wash_service', '=', 'True')]" />
                 <separator />
-                <filter name="filter_high_capacity" string="Gran capacidad >30" domain="[('capacity', '>', 29)]" />
+                <filter name="filter_high_capacity" string="Large capacity >30" domain="[('capacity', '>', 29)]" />
             </search>
         </field>
     </record>
@@ -61,7 +61,7 @@
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_nocontent_smiling_face">
-                Agrega tu primer Estacionamiento aqui :D
+                Add your first Parking here :D
             </p>
         </field>
     </record>

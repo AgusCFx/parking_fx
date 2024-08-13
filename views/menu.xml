@@ -10,14 +10,14 @@
 
     <menuitem
         id="parking_parking_fx"
-        name="Estacionamientos"
+        name="Parking lots"
         action="parking_fx.action_lot_parking_fx"
         parent="root_menu_parking_fx"
         sequence="10"/>
 
     <menuitem
         id="parking_vehicle"
-        name="Vehiculos"
+        name="Vehicles"
         action="parking_fx.action_vehicles_parking_fx"
         parent="root_menu_parking_fx"
         sequence="20"/>

@@ -5,10 +5,11 @@
         <field name="name">parking.vehicle.view.tree</field>
         <field name="model">parking.vehicle</field>
         <field name="arch" type="xml">
-            <tree string="Vehiculos">
+            <tree string="Vehicles">
+                <field name="name" />
                 <field name="license_plate" />
-                <field name="make" />
-                <field name="model" />
+                <field name="brand_id" />
+                <field name="model_id" />
                 <field name="parking_lot_id" />
             </tree>
         </field>
@@ -19,22 +20,22 @@
         <field name="name">parking.vehicle.view.form</field>
         <field name="model">parking.vehicle</field>
         <field name="arch" type="xml">
-            <form string="Agregar nuevo Vehiculo">
+            <form string="Add New Vehicle">
                 <sheet>
-                    <group name="general">
-                        
-                        <group name="Info" string="Datos de Vehiculo">
+                    <group name="general">  
+                        <group name="Info" string="Vehicle Data">
+                            <field name="name" />
                             <field name="license_plate" />
-                            <field name="make" />
-                            <field name="model" />
+                            <field name="brand_id" />
+                            <field name="model_id" />
                             <field name="color" />
                         </group>
-                        <group name="parking" string="Estacionamiento">
+                        <group name="parking" string="Parking">
                             <field name="parking_lot_id" />         
                             <field name="entry_time" />
                             <field name="exit_time" />
                         </group>
-                        <group name="notes" string="Informacion adicional">
+                        <group name="notes" string="Additional information">
                             <field name="notes" />         
                         </group>
                     </group>
@@ -57,12 +58,12 @@
     </record>
 
     <record id="action_vehicles_parking_fx" model="ir.actions.act_window">
-        <field name="name">Vehiculos</field>
+        <field name="name">Vehicles</field>
         <field name="res_model">parking.vehicle</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_nocontent_smiling_face">
-                Agrega el primer Vehiculo aqui :D
+                Add the first Vehicle here :D
             </p>
         </field>
     </record>
